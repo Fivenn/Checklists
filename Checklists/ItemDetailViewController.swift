@@ -41,7 +41,6 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
             delegate?.ItemDetailViewController(self, didFinishEditing: itemToEdit)
         } else {
             let item = ChecklistItem()
-            
             item.text = textField.text!
             item.checked = false
             delegate?.ItemDetailViewController(self, didFinishAdding: item)
@@ -49,7 +48,6 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
         return nil
     }
     
@@ -62,10 +60,7 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
         let oldText = textField.text!
         let stringRange = Range(range, in:oldText)!
         let newText = oldText.replacingCharacters(in: stringRange, with: string)
-        
         doneBarButton.isEnabled = !newText.isEmpty
-        
         return true
     }
-    
 }
