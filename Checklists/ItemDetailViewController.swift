@@ -9,6 +9,7 @@
 import UIKit
 
 protocol ItemDetailViewControllerDelegate: class {
+    
     func ItemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
     func ItemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
     func ItemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
