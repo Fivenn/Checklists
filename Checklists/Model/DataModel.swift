@@ -26,6 +26,12 @@ class DataModel {
         handleFirstTime()
     }
     
+    func sortChecklists() {
+        lists.sort(by: { checklist1, checklist2 in
+            return checklist1.name.localizedStandardCompare(checklist2.name) == .orderedAscending
+        })
+    }
+    
     //MARK: Load/save code
     func documentDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
